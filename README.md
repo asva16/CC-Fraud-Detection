@@ -69,4 +69,17 @@ We managed to only lost $1866.287 on the testing data. This result seemed slight
 The values below were calculated using testing data and rounded to the first 4 digits.
 ![image](https://user-images.githubusercontent.com/48485276/201525652-f7038cf9-6214-41e2-a2bd-48a7ab3e0712.png)
 
+Over-sampling didn't improve the model performance (aucpr and precision@recall), so implementing over-sampling to deal with imbalanced dataset is such a waste of time as it consumes more time to train the model. On the third approach, we need to validate the result with a Cost-Sensitive Resampling to verify it.
+
+### Pros and Cons
+Aurpr metric can’t be translated directly to businessmen, but it can be implemented with any probabilistic models
+
+Precision@Recall is easy to understand but it’s difficult to tune the threshold with cross-validation, because the recall value may not reach the expected value in each fold. That’s why we tuned the threshold on holdout/testing data.
+
+example-dependant cost-sensitive is another easy-to-understand metric. In addition to changing the value of the threshold, we can also force the model to classify transactions as fraud when the number of transactions is large. However, this will result in a decrease in the precision value. But there are perhaps three main groups of cost-sensitive methods that are most relevant for imbalanced learning; they are:
+1.  Cost-Sensitive Resampling
+2.  Cost-Sensitive Algorithms
+3.  Cost-Sensitive Ensembles
+
+which use case weight or class weight argument
 
