@@ -1,5 +1,5 @@
 # CC-Fraud-Detection
-Comparing the usage of over-sampling on three approach to tackle imbalanced data in less than two hours.
+Comparing the usage of over-sampling on three approaches to tackle imbalanced data in less than two hours.
 
 ## Context & Content
 The data can be obtained from https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud.
